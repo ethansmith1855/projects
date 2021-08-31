@@ -1,0 +1,14 @@
+C:\Users\smith\source\repos\QuestGame\QuestGame\bin\Debug\QuestGame.exe.config
+C:\Users\smith\source\repos\QuestGame\QuestGame\bin\Debug\QuestGame.exe
+C:\Users\smith\source\repos\QuestGame\QuestGame\bin\Debug\QuestGame.pdb
+C:\Users\smith\source\repos\QuestGame\QuestGame\obj\Debug\QuestGame.csprojAssemblyReference.cache
+C:\Users\smith\source\repos\QuestGame\QuestGame\obj\Debug\QuestGame.csproj.CoreCompileInputs.cache
+C:\Users\smith\source\repos\QuestGame\QuestGame\obj\Debug\QuestGame.exe
+C:\Users\smith\source\repos\QuestGame\QuestGame\obj\Debug\QuestGame.pdb
+C:\Users\smith\OneDrive\Documents\source\repos\QuestGame\QuestGame\bin\Debug\QuestGame.exe.config
+C:\Users\smith\OneDrive\Documents\source\repos\QuestGame\QuestGame\bin\Debug\QuestGame.exe
+C:\Users\smith\OneDrive\Documents\source\repos\QuestGame\QuestGame\bin\Debug\QuestGame.pdb
+C:\Users\smith\OneDrive\Documents\source\repos\QuestGame\QuestGame\obj\Debug\QuestGame.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\source\repos\QuestGame\QuestGame\obj\Debug\QuestGame.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\source\repos\QuestGame\QuestGame\obj\Debug\QuestGame.exe
+C:\Users\smith\OneDrive\Documents\source\repos\QuestGame\QuestGame\obj\Debug\QuestGame.pdb
