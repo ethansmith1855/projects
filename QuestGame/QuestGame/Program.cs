@@ -10,7 +10,7 @@ namespace QuestGame
 {
     class Program
     {
-
+        //Setting public vars
         static public string player = "0";
         static public int playerX = 10;
         static public int playerY = 10;
@@ -18,6 +18,7 @@ namespace QuestGame
 
         static public int MainMapWidth = 73;
         static public int MainMapHeight = 22;
+        //2 dimensional array for map
         static public char[,] MainMap = new char[MainMapWidth, MainMapHeight];
 
         static public int Health = 100;
@@ -27,6 +28,7 @@ namespace QuestGame
 
         static void Main(string[] args)
         {
+            // This Is making the window size (75, 25), then running the Play() method.
             Console.WindowWidth = 75;
             Console.WindowHeight = 25;
             Console.CursorVisible = false;
@@ -60,9 +62,10 @@ namespace QuestGame
                     Console.ReadKey();
                     keepGoing = false;
                 }
-
+                
                 if (!Console.KeyAvailable)
                 {
+                    //Checking for correct key input, then moving character depending on the key pressed.
                     switch (input.Key)
                     {
                         case ConsoleKey.UpArrow:
@@ -106,7 +109,7 @@ namespace QuestGame
                 }
             }
         }
-
+        //Working on making a working enemy 
         static void CreateEnemy(int x, int y, string enemy)
         {
             Console.SetCursorPosition(x, y);
@@ -139,7 +142,7 @@ namespace QuestGame
                 Console.Write('&');
             }
         }
-
+        //This is what is shown on the bottom of the screen.
         static void DrawMenu()
         {
             Console.WriteLine($"            Coins: {Coins}              Health: {Health}%");
@@ -181,6 +184,7 @@ namespace QuestGame
 
         static void DrawMap()
         {
+            //draws each char in MainMap [x, y]
             for (int x = 0; x < MainMapWidth; x++)
             {
                 for (int y = 0; y < MainMapHeight; y++)
@@ -202,7 +206,9 @@ namespace QuestGame
         {
             string fileData = File.ReadAllText(@"..\..\MainMap.txt");
             int i = 0;
-
+            
+            //Puts the fileData into the MainMap 2 dimensional array 
+            //Has to be in [x, y] syntax, [][] Doesnt seem to work in this case.
             foreach (string row in fileData.Split('\n'))
             {
                 int j = 0;
@@ -224,7 +230,7 @@ namespace QuestGame
         }
 
 
-
+        //Clears the screen
         static void Clear()
         {
             Console.Clear();
