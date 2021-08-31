@@ -1,2 +1,2 @@
 language = "csharp"
-run = "csharp ./replit_test/helloworld"
+run = "csharp ./replit_test/helloworld.cs"
