@@ -8,7 +8,6 @@ namespace Guitar_App
 {
     class Program
     {
-        //Poop
         public static string[] e = { "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E" };
         public static string[] B = { "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" };
         public static string[] G = { "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G" };
