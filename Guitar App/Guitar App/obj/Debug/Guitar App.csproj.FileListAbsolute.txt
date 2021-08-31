@@ -1,0 +1,7 @@
+C:\Users\smith\source\repos\Guitar App\Guitar App\bin\Debug\Guitar App.exe.config
+C:\Users\smith\source\repos\Guitar App\Guitar App\bin\Debug\Guitar App.exe
+C:\Users\smith\source\repos\Guitar App\Guitar App\bin\Debug\Guitar App.pdb
+C:\Users\smith\source\repos\Guitar App\Guitar App\obj\Debug\Guitar App.csprojAssemblyReference.cache
+C:\Users\smith\source\repos\Guitar App\Guitar App\obj\Debug\Guitar App.csproj.CoreCompileInputs.cache
+C:\Users\smith\source\repos\Guitar App\Guitar App\obj\Debug\Guitar App.exe
+C:\Users\smith\source\repos\Guitar App\Guitar App\obj\Debug\Guitar App.pdb
