@@ -44,7 +44,7 @@ namespace KeyWord
             }
         }
 
-        static void WriteWord(string word)  //writes each word indivitually
+        static void WriteWord(string word)  //this writes each word indivitually 
         {
             bool keyWordFound = false;
             foreach (var keyWord in keyWordList)
