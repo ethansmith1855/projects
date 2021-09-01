@@ -1,0 +1,7 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\KeyWord\KeyWord\bin\Debug\KeyWord.exe.config
+C:\Users\smith\OneDrive\Documents\GitHub\projects\KeyWord\KeyWord\bin\Debug\KeyWord.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\KeyWord\KeyWord\bin\Debug\KeyWord.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\KeyWord\KeyWord\obj\Debug\KeyWord.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\KeyWord\KeyWord\obj\Debug\KeyWord.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\KeyWord\KeyWord\obj\Debug\KeyWord.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\KeyWord\KeyWord\obj\Debug\KeyWord.pdb
