@@ -10,6 +10,7 @@ namespace KeyWord
     {
 
         public static List<string> keyWordList = new List<string>();
+        public static List<string> NotUsedKeyWords = new List<string>(); 
 
         static void Main(string[] args)
         {
@@ -37,6 +38,7 @@ namespace KeyWord
                 else
                 {
                     keyWordList.Add(word);
+                    NotUsedKeyWords.Add(word);
                     word = "";
                 }
             }
@@ -75,6 +77,7 @@ namespace KeyWord
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(wordCopy);
                 Console.ForegroundColor = ConsoleColor.White;
+                NotUsedKeyWords.Remove(word);
             }
             else
             {
@@ -102,6 +105,18 @@ namespace KeyWord
                     word = "";
                 }
             }
+
+            //not used list
+
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine("These key words were not used");
+            Console.WriteLine();
+            foreach (var keyWord in NotUsedKeyWords)
+            {
+                Console.Write(keyWord);
+                Console.Write(" ");
+            }
+
             Console.ReadKey();
         }
 
