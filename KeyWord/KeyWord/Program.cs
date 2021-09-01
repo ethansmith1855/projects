@@ -9,6 +9,8 @@ namespace KeyWord
     class Program
     {
 
+        //DOES NOT WORK WITH PUNCTUATION            ## WORKING ON IT
+
         public static List<string> keyWordList = new List<string>();
 
         static void Main(string[] args)
@@ -20,7 +22,7 @@ namespace KeyWord
             SearchForKeyWord(input);
         }
 
-        static void AskForKeyWords()
+        static void AskForKeyWords()   //Getting KeyWords
         {
             Console.WriteLine("What key words are you looking for?");
             Console.WriteLine("Use spaces to separate them.");
@@ -42,7 +44,7 @@ namespace KeyWord
             }
         }
 
-        static void WriteWord(string word)
+        static void WriteWord(string word)  //writes each word indivitually
         {
             bool keyWordFound = false;
             foreach (var keyWord in keyWordList)
@@ -72,7 +74,7 @@ namespace KeyWord
             Console.Write(" ");
         }
 
-        static void SearchForKeyWord(string input)
+        static void SearchForKeyWord(string input)  //makes words to search from
         {
             Clear();
             Console.WriteLine("\n\n");
