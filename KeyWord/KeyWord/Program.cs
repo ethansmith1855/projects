@@ -109,7 +109,14 @@ namespace KeyWord
             //not used list
 
             Console.WriteLine("\n\n\n");
-            Console.WriteLine("These key words were not used");
+            if (NotUsedKeyWords.Count != 0)
+            {
+                Console.WriteLine("These keywords were not used");
+            }
+            else
+            {
+                Console.WriteLine("All keywords were used");
+            }
             Console.WriteLine();
             foreach (var keyWord in NotUsedKeyWords)
             {
