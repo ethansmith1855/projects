@@ -1,0 +1,7 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Webpage Manipulator\Webpage Manipulator\bin\Debug\Webpage Manipulator.exe.config
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Webpage Manipulator\Webpage Manipulator\bin\Debug\Webpage Manipulator.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Webpage Manipulator\Webpage Manipulator\bin\Debug\Webpage Manipulator.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Webpage Manipulator\Webpage Manipulator\obj\Debug\Webpage Manipulator.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Webpage Manipulator\Webpage Manipulator\obj\Debug\Webpage Manipulator.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Webpage Manipulator\Webpage Manipulator\obj\Debug\Webpage Manipulator.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Webpage Manipulator\Webpage Manipulator\obj\Debug\Webpage Manipulator.pdb
