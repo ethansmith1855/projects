@@ -25,6 +25,16 @@ namespace Webpage_Manipulator
             Console.ReadKey();
         }
 
+        public static void OpenLink()
+        {
+            Console.WriteLine("Which link would you like to open?");
+            string input = Console.ReadLine();
+            int number;
+            Int32.TryParse(input, out number);
+            Process.Start(Links[number]);
+
+        }
+
         public static void FindLink(string responceFromServer)
         {
             bool linkOpen = false;
@@ -94,13 +104,13 @@ namespace Webpage_Manipulator
             {
                 Console.WriteLine(lin.Key + ") " + lin.Value);
             }
-            Console.ReadKey();
+            OpenLink();
         }
 
         public static void SearchGoogle(string query)
         {
             string responseFromServer;
-            //Process.Start("http://search.yahoo.com/search?q=" + query);
+            Process.Start("http://search.yahoo.com/search?q=" + query);
             WebRequest request = WebRequest.Create("http://search.yahoo.com/search?q=" + query);
             request.Credentials = CredentialCache.DefaultCredentials;
             WebResponse response = request.GetResponse();
