@@ -12,7 +12,8 @@ namespace Webpage_Manipulator
     class Program
     {
 
-        public static List<string> Links = new List<string>();
+        //public static List<string> Links = new List<string>();
+        public static Dictionary<int, string> Links = new Dictionary<int, string>();
 
         static void Main(string[] args)
         {
@@ -27,6 +28,7 @@ namespace Webpage_Manipulator
         public static void FindLink(string responceFromServer)
         {
             bool linkOpen = false;
+            int linkCount = 0;
             string link = "";
             bool open = false;
             string word = "";
@@ -48,7 +50,8 @@ namespace Webpage_Manipulator
                         }
                         else
                         {
-                            Links.Add(link);
+                            linkCount++;
+                            Links.Add(linkCount, link);
                             link = "";
                             linkOpen = false;
                             firstLetterInLink = true;
@@ -86,9 +89,10 @@ namespace Webpage_Manipulator
             }
             Clear();
             Console.WriteLine(word);
+            int q = 0;
             foreach (var lin in Links)
             {
-                Console.WriteLine(lin);
+                Console.WriteLine(lin.Key + ") " + lin.Value);
             }
             Console.ReadKey();
         }
@@ -96,7 +100,7 @@ namespace Webpage_Manipulator
         public static void SearchGoogle(string query)
         {
             string responseFromServer;
-            Process.Start("http://search.yahoo.com/search?q=" + query);
+            //Process.Start("http://search.yahoo.com/search?q=" + query);
             WebRequest request = WebRequest.Create("http://search.yahoo.com/search?q=" + query);
             request.Credentials = CredentialCache.DefaultCredentials;
             WebResponse response = request.GetResponse();
