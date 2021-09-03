@@ -12,7 +12,6 @@ namespace Webpage_Manipulator
     class Program
     {
 
-        //public static List<string> Links = new List<string>();
         public static Dictionary<int, string> Links = new Dictionary<int, string>();
 
         static void Main(string[] args)
@@ -32,11 +31,14 @@ namespace Webpage_Manipulator
             int number;
             Int32.TryParse(input, out number);
             Process.Start(Links[number]);
-
+            string spider = Links[number];
+            SearchGoogle(spider, 1);
+            FindLink(spider);
         }
 
         public static void FindLink(string responceFromServer)
         {
+            Links.Clear();
             bool linkOpen = false;
             int linkCount = 0;
             string link = "";
@@ -99,7 +101,6 @@ namespace Webpage_Manipulator
             }
             Clear();
             Console.WriteLine(word);
-            int q = 0;
             foreach (var lin in Links)
             {
                 Console.WriteLine(lin.Key + ") " + lin.Value);
@@ -112,6 +113,30 @@ namespace Webpage_Manipulator
             string responseFromServer;
             Process.Start("http://search.yahoo.com/search?q=" + query);
             WebRequest request = WebRequest.Create("http://search.yahoo.com/search?q=" + query);
+            request.Credentials = CredentialCache.DefaultCredentials;
+            WebResponse response = request.GetResponse();
+            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+            using (Stream dataStream = response.GetResponseStream())
+            {
+                // Open the stream using a StreamReader for easy access.
+                StreamReader reader = new StreamReader(dataStream);
+                // Read the content.
+                responseFromServer = reader.ReadToEnd();
+                // Display the content.
+                Console.WriteLine(responseFromServer);
+            }
+
+            FindLink(responseFromServer);
+
+            // Close the response.
+            //response.Close();
+        }
+
+        public static void SearchGoogle(string query, int one)
+        {
+            string responseFromServer;
+            Process.Start(query);
+            WebRequest request = WebRequest.Create(query);
             request.Credentials = CredentialCache.DefaultCredentials;
             WebResponse response = request.GetResponse();
             Console.WriteLine(((HttpWebResponse)response).StatusDescription);
