@@ -16,6 +16,7 @@ namespace Webpage_Manipulator
         public static Dictionary<int, string> GoodLinks = new Dictionary<int, string>();
         public static List<string> Question = new List<string>();
         public static Dictionary<int, string> ImageLinks = new Dictionary<int, string>();
+        public static Dictionary<int, string> VideoLinks = new Dictionary<int, string>();
         public static List<string> SpecificTerm = new List<string>();
 
         static void Main(string[] args)
@@ -28,13 +29,13 @@ namespace Webpage_Manipulator
             Console.ReadKey();
         }
 
-        public static void OpenLink()
+        public static void OpenLink(Dictionary<int, string> dict)
         {
             Console.WriteLine("Which link would you like to open?");
             string input = Console.ReadLine();
             int number;
             Int32.TryParse(input, out number);
-            Process.Start(Links[number]);
+            Process.Start(dict[number]);
             string spider = Links[number];
             ImageLinks.Clear();
             SearchGoogle(spider);
@@ -337,19 +338,19 @@ namespace Webpage_Manipulator
             }
             Clear();
             Console.WriteLine(word);
-            FindSpecificLink(ImageLinks, "img");
+            FindSpecificLink(ImageLinks, "how");
             foreach (var lin in ImageLinks)
             {
                 Console.WriteLine(lin.Key + ") " + lin.Value);
             }
-            OpenLink();
+            OpenLink(ImageLinks);
         }
 
         public static void SearchGoogle(string query)
         {
             string responseFromServer;
-            Process.Start("http://search.yahoo.com/search?q=" + query);
-            WebRequest request = WebRequest.Create("http://search.yahoo.com/search?q=" + query);
+            Process.Start("http://search.google.com/search?q=" + query);
+            WebRequest request = WebRequest.Create("http://search.google.com/search?q=" + query);
             request.Credentials = CredentialCache.DefaultCredentials;
             WebResponse response = request.GetResponse();
             Console.WriteLine(((HttpWebResponse)response).StatusDescription);
