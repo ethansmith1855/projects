@@ -13,11 +13,15 @@ namespace Webpage_Manipulator
     {
 
         public static Dictionary<int, string> Links = new Dictionary<int, string>();
+        public static Dictionary<int, string> GoodLinks = new Dictionary<int, string>();
+        public static List<string> Question = new List<string>();
+        public static Dictionary<int, string> ImageLinks = new Dictionary<int, string>();
+        public static List<string> SpecificTerm = new List<string>();
 
         static void Main(string[] args)
         {
-
             string input = Console.ReadLine();
+            PutQuestionIntoList(input);
             //FindLink(input);
             SearchGoogle(input);
             
@@ -32,8 +36,240 @@ namespace Webpage_Manipulator
             Int32.TryParse(input, out number);
             Process.Start(Links[number]);
             string spider = Links[number];
-            SearchGoogle(spider, 1);
-            FindLink(spider);
+            ImageLinks.Clear();
+            SearchGoogle(spider);
+            //FindLink(spider);
+        }
+
+        public static void FindGoodLink()
+        {
+            int x = 0;
+            bool open = false;
+            string word = "";
+            int linkCount = 0;
+            bool firstTime = true;
+            foreach (var link in Links.Values)
+            {
+                foreach (var qWord in Question)
+                {
+                    int wordcount = qWord.Length;
+                    foreach (var letter in link)
+                    {
+                        if (x <= wordcount)
+                        {
+                            char qWordChar = qWord[x];
+                            if (qWordChar == letter)
+                            {
+                                open = true;
+                                if (firstTime == true)
+                                {
+                                    firstTime = false;
+                                }
+                                else
+                                {
+                                    x++;
+                                }
+                            }
+                            else
+                            {
+                                open = false;
+                                firstTime = true;
+                                x = 0;
+                            }
+                        }
+                        if (x == wordcount)
+                        {
+                            if (open == true)
+                            {
+                                foreach (var goodLink in GoodLinks)
+                                {
+                                    if (link == goodLink.Value)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        linkCount++;
+                                        GoodLinks.Add(linkCount, link);
+                                        open = false;
+                                        firstTime = true;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                x = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public static void FindSpecificLink(Dictionary<int, string> dic, string specificTerm)
+        {
+            int x = 0;
+            bool open = false;
+            string word = "";
+            int linkCount = 0;
+            bool firstTime = true;
+            SpecificTerm.Clear();
+            specificTerm += " ";
+            SpecificTerm.Add(specificTerm);
+
+            foreach (var link in Links.Values)
+            {
+                foreach (var qWord in SpecificTerm)
+                {
+                    int wordcount = qWord.Length;
+                    foreach (var letter in link)
+                    {
+                        char qWordChar = qWord[x];
+                        if (x < wordcount - 1)
+                        {
+                            if (qWordChar == letter)
+                            {
+                                open = true;
+                                if (firstTime != true)
+                                {
+                                    firstTime = false;
+                                }
+                                else
+                                {
+                                    x++;
+                                }
+                            }
+                            else
+                            {
+                                open = false;
+                                firstTime = true;
+                                x = 0;
+                            }
+                        }
+                        if (x == wordcount - 1)
+                        {
+                            if (open == true)
+                            {
+                                foreach (var goodLink in GoodLinks)
+                                {
+                                    if (link == goodLink.Value)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        linkCount++;
+                                        dic.Add(linkCount, link);
+                                        open = false;
+                                        firstTime = true;
+                                    }
+                                }
+                                if (GoodLinks.Count == 0)
+                                {
+                                    linkCount++;
+                                    dic.Add(linkCount, link);
+                                    open = false;
+                                    firstTime = true;
+                                }
+                            }
+                            else
+                            {
+                                x = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void FindSpecificLink(Dictionary<int, string> dic, List<string> key)  //WORKING ON     --A Better Virsion Of FindGoodLink
+        {
+            int x = 0;
+            bool open = false;
+            string word = "";
+            int linkCount = 0;
+            bool firstTime = true;
+
+            foreach (var link in Links.Values)
+            {
+                foreach (var qWord in key)
+                {
+                    int wordcount = qWord.Length;
+                    foreach (var letter in link)
+                    {
+                        char qWordChar = qWord[x];
+                        if (x < wordcount - 1)
+                        {
+                            if (qWordChar == letter)
+                            {
+                                open = true;
+                                if (firstTime != true)
+                                {
+                                    firstTime = false;
+                                }
+                                else
+                                {
+                                    x++;
+                                }
+                            }
+                            else
+                            {
+                                open = false;
+                                firstTime = true;
+                                x = 0;
+                            }
+                        }
+                        if (x == wordcount - 1)
+                        {
+                            if (open == true)
+                            {
+                                foreach (var goodLink in GoodLinks)
+                                {
+                                    if (link == goodLink.Value)
+                                    {
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        linkCount++;
+                                        dic.Add(linkCount, link);
+                                        open = false;
+                                        firstTime = true;
+                                    }
+                                }
+                                if (GoodLinks.Count == 0)
+                                {
+                                    linkCount++;
+                                    dic.Add(linkCount, link);
+                                    open = false;
+                                    firstTime = true;
+                                }
+                            }
+                            else
+                            {
+                                x = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }           
+
+        public static void PutQuestionIntoList(string question)
+        {
+            string word = "";
+            question += " ";
+            foreach (var letter in question)
+            {
+                if (letter != ' ')
+                {
+                    word += letter;
+                }
+                else
+                {
+                    Question.Add(word);
+                    word = "";
+                }
+            }
         }
 
         public static void FindLink(string responceFromServer)
@@ -101,7 +337,8 @@ namespace Webpage_Manipulator
             }
             Clear();
             Console.WriteLine(word);
-            foreach (var lin in Links)
+            FindSpecificLink(ImageLinks, "img");
+            foreach (var lin in ImageLinks)
             {
                 Console.WriteLine(lin.Key + ") " + lin.Value);
             }
