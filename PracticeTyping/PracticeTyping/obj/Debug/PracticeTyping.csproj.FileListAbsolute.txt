@@ -1,0 +1,7 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\bin\Debug\PracticeTyping.exe.config
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\bin\Debug\PracticeTyping.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\bin\Debug\PracticeTyping.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\obj\Debug\PracticeTyping.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\obj\Debug\PracticeTyping.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\obj\Debug\PracticeTyping.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\obj\Debug\PracticeTyping.pdb

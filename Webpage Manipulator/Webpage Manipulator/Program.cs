@@ -29,13 +29,13 @@ namespace Webpage_Manipulator
             Console.ReadKey();
         }
 
-        public static void OpenLink(Dictionary<int, string> dict)
+        public static void OpenLink()
         {
             Console.WriteLine("Which link would you like to open?");
             string input = Console.ReadLine();
             int number;
             Int32.TryParse(input, out number);
-            Process.Start(dict[number]);
+            Process.Start(Links[number]);
             string spider = Links[number];
             ImageLinks.Clear();
             SearchGoogle(spider);
@@ -106,6 +106,7 @@ namespace Webpage_Manipulator
                 }
             }
         }
+
         public static void FindSpecificLink(Dictionary<int, string> dic, string specificTerm)
         {
             int x = 0;
@@ -281,6 +282,7 @@ namespace Webpage_Manipulator
             string link = "";
             bool open = false;
             string word = "";
+            string finishedLink = "https:";
             bool firstLetterInLink = true;
             int x = 0;
             foreach (var item in responceFromServer)
@@ -300,7 +302,8 @@ namespace Webpage_Manipulator
                         else
                         {
                             linkCount++;
-                            Links.Add(linkCount, link);
+                            finishedLink += link;
+                            Links.Add(linkCount, finishedLink);
                             link = "";
                             linkOpen = false;
                             firstLetterInLink = true;
@@ -316,7 +319,7 @@ namespace Webpage_Manipulator
                     }
                     if (x == 4)
                     {
-                        if (word == "ref=")
+                        if (word == "ttps")
                         {
                             open = false;
                             word = "";
@@ -338,19 +341,19 @@ namespace Webpage_Manipulator
             }
             Clear();
             Console.WriteLine(word);
-            FindSpecificLink(ImageLinks, "how");
-            foreach (var lin in ImageLinks)
+            FindSpecificLink(ImageLinks, "youtube");
+            foreach (var lin in Links)
             {
                 Console.WriteLine(lin.Key + ") " + lin.Value);
             }
-            OpenLink(ImageLinks);
+            OpenLink();
         }
 
         public static void SearchGoogle(string query)
         {
             string responseFromServer;
-            Process.Start("http://search.google.com/search?q=" + query);
-            WebRequest request = WebRequest.Create("http://search.google.com/search?q=" + query);
+            Process.Start("http://search.yahoo.com/search?q=" + query);
+            WebRequest request = WebRequest.Create("http://search.yahoo.com/search?q=" + query);
             request.Credentials = CredentialCache.DefaultCredentials;
             WebResponse response = request.GetResponse();
             Console.WriteLine(((HttpWebResponse)response).StatusDescription);
