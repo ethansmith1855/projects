@@ -1,0 +1,3 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\test-e3ds\test-e3ds\obj\Debug\test-e3ds.njsprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\test-e3ds\test-e3ds\obj\Debug\test-e3ds.njsproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\test-e3ds\test-e3ds\bin\Microsoft.NodejsTools.WebRole.dll
