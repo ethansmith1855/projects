@@ -136,6 +136,24 @@ namespace PracticeTyping
             }
         }
 
+        static void ReadFile(string file, List<string> list)
+        {
+            string word = "";
+            foreach (var letter in file)
+            {
+                if (letter != '\n')
+                {
+                    word += letter;
+                }
+                else
+                {
+                    word = word.Substring(0, word.Length - 1);
+                    list.Add(word);
+                    word = "";
+                }
+            }
+        }
+
         static void ManipulateTextFile()
         {
             string adjectivesText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\Adjectives.txt");
@@ -144,90 +162,12 @@ namespace PracticeTyping
             string subjectsText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\Subjects.txt");
             string wordsText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\WordFile.txt");
             string prepositionsText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\Prepositions.txt");
-            string word = "";
-            foreach (var letter in prepositionsText)
-            {
-                if (letter != '\n')
-                {
-                    word += letter;
-                }
-                else
-                {
-                    word = word.Substring(0, word.Length - 1);
-                    Prepositions.Add(word);
-                    word = "";
-                }
-            }
-            word = "";
-            foreach (var letter in subjectsText)
-            {
-                if (letter != '\n')
-                {
-                    word += letter;
-                }
-                else
-                {
-                    word = word.Substring(0, word.Length - 1);
-                    Subjects.Add(word);
-                    word = "";
-                }
-            }
-            word = "";
-            foreach (var letter in adjectivesText)
-            {
-                if (letter != '\n')
-                {
-                    word += letter;
-                }
-                else
-                {
-                    word = word.Substring(0, word.Length - 1);
-                    Adjectives.Add(word);
-                    word = "";
-                }
-            }
-            word = "";
-            foreach (var letter in nounsText)
-            {
-                if (letter != '\n')
-                {
-                    word += letter;
-                }
-                else
-                {
-                    word = word.Substring(0, word.Length - 1);
-                    Nouns.Add(word);
-                    word = "";
-                }
-            }
-            word = "";
-            foreach (var letter in verbsText)
-            {
-                if (letter != '\n')
-                {
-                    word += letter;
-                }
-                else
-                {
-                    word = word.Substring(0, word.Length - 1);
-                    Verbs.Add(word);
-                    word = "";
-                }
-            }
-            word = "";
-            foreach (var letter in wordsText)
-            {
-                if (letter != '\n')
-                {
-                    word += letter;
-                }
-                else
-                {
-                    word = word.Substring(0, word.Length - 1);
-                    Words.Add(word);
-                    word = "";
-                }
-            }
+            ReadFile(prepositionsText, Prepositions);
+            ReadFile(wordsText, Words);
+            ReadFile(subjectsText, Subjects);
+            ReadFile(verbsText, Verbs);
+            ReadFile(nounsText, Nouns);
+            ReadFile(adjectivesText, Adjectives);
         }
     }
 }
