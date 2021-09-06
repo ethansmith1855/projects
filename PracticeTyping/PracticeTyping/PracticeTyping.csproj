@@ -50,7 +50,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WordFile.txt" />
+    <Content Include="TextFiles\Prepositions.txt" />
+    <Content Include="TextFiles\Subjects.txt" />
+    <Content Include="TextFiles\Verbs.txt" />
+    <Content Include="TextFiles\Nouns.txt" />
+    <Content Include="TextFiles\Adjectives.txt" />
+    <Content Include="TextFiles\WordFile.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

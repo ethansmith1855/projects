@@ -11,6 +11,11 @@ namespace PracticeTyping
     {
 
         public static List<string> Words = new List<string>();
+        public static List<string> Nouns = new List<string>();
+        public static List<string> Verbs = new List<string>();
+        public static List<string> Subjects = new List<string>();
+        public static List<string> Adjectives = new List<string>();
+        public static List<string> Prepositions = new List<string>();
         public static Dictionary<int, string> Sentences = new Dictionary<int, string>();
 
         public static int sentencesCount = 0;
@@ -27,7 +32,7 @@ namespace PracticeTyping
             int errors = 0;
             int typerX = 0;
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 10; i++)
             {
                 SentenceMaker();
             }
@@ -70,27 +75,48 @@ namespace PracticeTyping
             int sentenceLength = rnd.Next(7, 14);
             int count = 0;
             List<string> shuffle = new List<string>();
-            Shuffle(Words);
+            ShuffleAllLists();
             string sentence = "";
 
-            foreach (var word in Words)
-            {
-                if (sentenceLength >= count)
-                {
-                    sentence += word;
-                    if (sentenceLength != count)
-                    {
-                        sentence += " ";
-                    }
-                    else
-                    {
-                        sentence += ".";
-                    }
-                    count++;
-                }
-            }
+            sentence += Subjects.First();
+            sentence += " ";
+            sentence += Verbs.First();
+            sentence += " ";
+            sentence += Adjectives.First();
+            sentence += " ";
+            sentence += Prepositions.First();
+            sentence += " ";
+            sentence += Nouns.First();
+            sentence += ".";
+
+            //foreach (var word in Words)
+            //{
+            //    if (sentenceLength >= count)
+            //    {
+            //        sentence += word;
+            //        if (sentenceLength != count)
+            //        {
+            //            sentence += " ";
+            //        }
+            //        else
+            //        {
+            //            sentence += ".";
+            //        }
+            //        count++;
+            //    }
+            //}
             sentencesCount++;
             Sentences.Add(sentencesCount, sentence);
+        }
+
+        static void ShuffleAllLists()
+        {
+            Shuffle(Words);
+            Shuffle(Nouns);
+            Shuffle(Prepositions);
+            Shuffle(Subjects);
+            Shuffle(Adjectives);
+            Shuffle(Verbs);
         }
 
         static void Shuffle(List<string> list)
@@ -109,9 +135,79 @@ namespace PracticeTyping
 
         static void ManipulateTextFile()
         {
-            string text = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\WordFile.txt");
+            string adjectivesText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\Adjectives.txt");
+            string nounsText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\Nouns.txt");
+            string verbsText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\Verbs.txt");
+            string subjectsText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\Subjects.txt");
+            string wordsText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\WordFile.txt");
+            string prepositionsText = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\TextFiles\Prepositions.txt");
             string word = "";
-            foreach (var letter in text)
+            foreach (var letter in prepositionsText)
+            {
+                if (letter != '\n')
+                {
+                    word += letter;
+                }
+                else
+                {
+                    word = word.Substring(0, word.Length - 1);
+                    Prepositions.Add(word);
+                    word = "";
+                }
+            }
+            foreach (var letter in subjectsText)
+            {
+                if (letter != '\n')
+                {
+                    word += letter;
+                }
+                else
+                {
+                    word = word.Substring(0, word.Length - 1);
+                    Subjects.Add(word);
+                    word = "";
+                }
+            }
+            foreach (var letter in adjectivesText)
+            {
+                if (letter != '\n')
+                {
+                    word += letter;
+                }
+                else
+                {
+                    word = word.Substring(0, word.Length - 1);
+                    Adjectives.Add(word);
+                    word = "";
+                }
+            }
+            foreach (var letter in nounsText)
+            {
+                if (letter != '\n')
+                {
+                    word += letter;
+                }
+                else
+                {
+                    word = word.Substring(0, word.Length - 1);
+                    Nouns.Add(word);
+                    word = "";
+                }
+            }
+            foreach (var letter in verbsText)
+            {
+                if (letter != '\n')
+                {
+                    word += letter;
+                }
+                else
+                {
+                    word = word.Substring(0, word.Length - 1);
+                    Verbs.Add(word);
+                    word = "";
+                }
+            }
+            foreach (var letter in wordsText)
             {
                 if (letter != '\n')
                 {
