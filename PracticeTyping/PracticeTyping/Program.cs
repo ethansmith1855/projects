@@ -18,6 +18,7 @@ namespace PracticeTyping
         public static List<string> Prepositions = new List<string>();
         public static Dictionary<int, string> Sentences = new Dictionary<int, string>();
 
+        public static int letterCount = 0;
         public static int sentencesCount = 0;
 
         static void Main(string[] args)
@@ -26,13 +27,15 @@ namespace PracticeTyping
             StartingTest();
         }
 
+        
+
         static void StartingTest()
         {
 
             int errors = 0;
             int typerX = 0;
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 3; i++)
             {
                 SentenceMaker();
             }
@@ -59,11 +62,12 @@ namespace PracticeTyping
                         Console.BackgroundColor = ConsoleColor.Black;
                     }
                     typerX++;
+                    letterCount++;
                 }
             }
             Console.Clear();
             Console.SetCursorPosition(0, 0);
-            Console.WriteLine($"You mad {errors} errors.");
+            Console.WriteLine($"You mad {errors} errors out of {letterCount} letters.");
 
             Console.ReadKey();
         }
@@ -88,7 +92,6 @@ namespace PracticeTyping
             sentence += " ";
             sentence += Nouns.First();
             sentence += ".";
-
             //foreach (var word in Words)
             //{
             //    if (sentenceLength >= count)
@@ -155,6 +158,7 @@ namespace PracticeTyping
                     word = "";
                 }
             }
+            word = "";
             foreach (var letter in subjectsText)
             {
                 if (letter != '\n')
@@ -168,6 +172,7 @@ namespace PracticeTyping
                     word = "";
                 }
             }
+            word = "";
             foreach (var letter in adjectivesText)
             {
                 if (letter != '\n')
@@ -181,6 +186,7 @@ namespace PracticeTyping
                     word = "";
                 }
             }
+            word = "";
             foreach (var letter in nounsText)
             {
                 if (letter != '\n')
@@ -194,6 +200,7 @@ namespace PracticeTyping
                     word = "";
                 }
             }
+            word = "";
             foreach (var letter in verbsText)
             {
                 if (letter != '\n')
@@ -207,6 +214,7 @@ namespace PracticeTyping
                     word = "";
                 }
             }
+            word = "";
             foreach (var letter in wordsText)
             {
                 if (letter != '\n')
