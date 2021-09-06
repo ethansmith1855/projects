@@ -17,10 +17,29 @@ namespace PracticeTyping
         static void Main(string[] args)
         {
             AddWords();
-            SentenceMaker();
-            SentenceMaker();
-            SentenceMaker();
-            SentenceMaker();
+            StartingTest();
+        }
+
+        static void StartingTest()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                SentenceMaker();
+            }
+
+            foreach (var sentence in Sentences.Values)
+            {
+                foreach (var letter in sentence)
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition(0, 0);
+                    Console.Write(sentence);
+                    Console.SetCursorPosition(0, 1);
+                    Console.ReadKey();
+                }
+            }
+
+            Console.ReadKey();
         }
 
         static void SentenceMaker()
