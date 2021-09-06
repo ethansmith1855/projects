@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace PracticeTyping
 {
@@ -16,28 +17,48 @@ namespace PracticeTyping
 
         static void Main(string[] args)
         {
-            AddWords();
+            ManipulateTextFile();
             StartingTest();
         }
 
         static void StartingTest()
         {
-            for (int i = 0; i < 4; i++)
+
+            int errors = 0;
+            int typerX = 0;
+
+            for (int i = 0; i < 1; i++)
             {
                 SentenceMaker();
             }
 
             foreach (var sentence in Sentences.Values)
             {
+                Console.Clear();
+                typerX = 0;
                 foreach (var letter in sentence)
                 {
-                    Console.Clear();
                     Console.SetCursorPosition(0, 0);
                     Console.Write(sentence);
-                    Console.SetCursorPosition(0, 1);
-                    Console.ReadKey();
+                    Console.SetCursorPosition(typerX, 1);
+                    ConsoleKeyInfo input = Console.ReadKey(true);
+                    if (input.KeyChar == letter)
+                    {
+                        Console.Write(letter);
+                    }
+                    else
+                    {
+                        errors++;
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.Write(input.KeyChar);
+                        Console.BackgroundColor = ConsoleColor.Black;
+                    }
+                    typerX++;
                 }
             }
+            Console.Clear();
+            Console.SetCursorPosition(0, 0);
+            Console.WriteLine($"You mad {errors} errors.");
 
             Console.ReadKey();
         }
@@ -46,12 +67,12 @@ namespace PracticeTyping
         {
             Random rnd = new Random();
 
-            int sentenceLength = rnd.Next(6, 12);
+            int sentenceLength = rnd.Next(7, 14);
             int count = 0;
             List<string> shuffle = new List<string>();
             Shuffle(Words);
             string sentence = "";
-            
+
             foreach (var word in Words)
             {
                 if (sentenceLength >= count)
@@ -86,34 +107,23 @@ namespace PracticeTyping
             }
         }
 
-        static void AddWords()
+        static void ManipulateTextFile()
         {
-            Words.Add("the");
-            Words.Add("is");
-            Words.Add("happy");
-            Words.Add("sad");
-            Words.Add("bad");
-            Words.Add("hello");
-            Words.Add("why");
-            Words.Add("when");
-            Words.Add("where");
-            Words.Add("how");
-            Words.Add("cow");
-            Words.Add("can");
-            Words.Add("very");
-            Words.Add("mad");
-            Words.Add("sand");
-            Words.Add("beach");
-            Words.Add("water");
-            Words.Add("milk");
-            Words.Add("cherry");
-            Words.Add("berry");
-            Words.Add("school");
-            Words.Add("work");
-            Words.Add("car");
-            Words.Add("truck");
-            Words.Add("trench");//25
+            string text = System.IO.File.ReadAllText(@"C:\Users\smith\OneDrive\Documents\GitHub\projects\PracticeTyping\PracticeTyping\WordFile.txt");
+            string word = "";
+            foreach (var letter in text)
+            {
+                if (letter != '\n')
+                {
+                    word += letter;
+                }
+                else
+                {
+                    word = word.Substring(0, word.Length - 1);
+                    Words.Add(word);
+                    word = "";
+                }
+            }
         }
-
     }
 }
