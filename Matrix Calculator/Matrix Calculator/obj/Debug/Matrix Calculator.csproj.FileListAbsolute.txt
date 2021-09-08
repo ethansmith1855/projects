@@ -1,0 +1,7 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Matrix Calculator\Matrix Calculator\bin\Debug\Matrix Calculator.exe.config
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Matrix Calculator\Matrix Calculator\bin\Debug\Matrix Calculator.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Matrix Calculator\Matrix Calculator\bin\Debug\Matrix Calculator.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Matrix Calculator\Matrix Calculator\obj\Debug\Matrix Calculator.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Matrix Calculator\Matrix Calculator\obj\Debug\Matrix Calculator.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Matrix Calculator\Matrix Calculator\obj\Debug\Matrix Calculator.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Matrix Calculator\Matrix Calculator\obj\Debug\Matrix Calculator.pdb
