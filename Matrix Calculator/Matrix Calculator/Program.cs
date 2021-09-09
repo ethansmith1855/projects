@@ -9,19 +9,49 @@ namespace Matrix_Calculator
     class Program
     {
 
-        public static List<Variable> variables = new List<Variable>();               //m:row n:column
-        public static Dictionary<int, int> subscript = new Dictionary<int, int>();   //mn , value
+        public static List<Variable> variables = new List<Variable>();
+        
         public static char currentLetter = 'A';
 
         static void Main(string[] args)
         {
+            GetMainInput();
+            ShowAllVariables();
+        }
+
+        static void GetMainInput()
+        {
+            bool keepGoing = true;
             GetVariable();
-            variables.Add(new Variable("A", subscript));
+            while (keepGoing)
+            {
+                Clear();
+                Console.WriteLine("y) get another variable");
+                Console.WriteLine("n) stop getting variables");
+                string input = Console.ReadLine();
+                switch (input)
+                {
+                    case "y":
+                        currentLetter++;
+                        GetVariable();
+                        break;
+                    case "n":
+                        keepGoing = false;
+                        break;
+                    default:
+                        Clear();
+                        Console.WriteLine("Not an Option");
+                        Console.ReadKey();
+                        break;
+                }
+            }
         }
 
         static void GetVariable()
         {
             Clear();
+            //Dictionary cant be a public var in this case
+            Dictionary<int, int> subscript = new Dictionary<int, int>();   //mn , value
             subscript.Clear();
             int rowCount = 0;
             string input = "";
@@ -86,6 +116,35 @@ namespace Matrix_Calculator
                     subscript.Add(Convert.ToInt32(subscriptTogether), Convert.ToInt32(value));
                 }
             }
+            variables.Add(new Variable(currentLetter.ToString(), subscript));
+        }
+
+        static void ShowAllVariables()
+        {
+            Clear();
+            foreach (var variable in variables)
+            {
+
+                Console.WriteLine();
+                Console.WriteLine($"{variable.VarName}: ");
+
+                foreach (var sub in variable.Subscript)
+                {
+                    string subS = sub.Key.ToString();
+                    subS = subS.Substring(1);
+                    if (subS == "1")
+                    {
+                        Console.WriteLine();
+                        Console.Write(sub.Value + " ");
+                    }
+                    else
+                    {
+                        Console.Write(sub.Value + " ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
         }
 
         static void Clear()
