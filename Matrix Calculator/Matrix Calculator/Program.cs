@@ -15,64 +15,75 @@ namespace Matrix_Calculator
 
         static void Main(string[] args)
         {
-            GetInput();
+            GetVariable();
             variables.Add(new Variable("A", subscript));
         }
 
-        static void GetInput()
+        static void GetVariable()
         {
             Clear();
+            subscript.Clear();
             int rowCount = 0;
             string input = "";
-            bool keepGoing = true;
             int rowSize = 0;
             int columnSize = 0;
             string number = "";
             bool countingRows = true;
-            while (keepGoing)
+            Console.WriteLine("Please type row x column");
+            Console.WriteLine();
+            Console.WriteLine($"");
+            input = Console.ReadLine();
+            int gap = 0;
+            //read input
+            // get row and column size
+            foreach (var letter in input.ToLower())
             {
-                Console.WriteLine("Please type row x column");
-                Console.WriteLine();
-                Console.WriteLine($"");
-                input = Console.ReadLine();
-                int gap = 0;
-                //read input
-                foreach (var letter in input.ToLower())
+                if (Char.IsWhiteSpace(letter))
                 {
-                    if (Char.IsWhiteSpace(letter))
+                    gap++;
+                }
+                if (Char.IsNumber(letter))
+                {
+                    if (countingRows == true)
                     {
-                        gap++;
+                        number += letter;
                     }
-                    if (Char.IsNumber(letter))
+                    else
                     {
-                        if (countingRows == true)
+                        if (gap != input.Length - 1) //subtracting the x
                         {
                             number += letter;
                         }
                         else
                         {
-                            if (gap != input.Length - 1) //subtracting the x
-                            {
-                                number += letter;
-                            }
-                            else
-                            {
-                                number += letter;
-                                columnSize = Convert.ToInt32(number);
-                                number = "";
-                                gap++;
-                            }
-                            
+                            number += letter;
+                            columnSize = Convert.ToInt32(number);
+                            number = "";
+                            gap++;
                         }
-                        gap++;
+
                     }
-                    if (letter == 'x')
-                    {
-                        rowSize = Convert.ToInt32(number);
-                        countingRows = false;
-                        number = "";
-                        gap++;
-                    }
+                    gap++;
+                }
+                if (letter == 'x')
+                {
+                    rowSize = Convert.ToInt32(number);
+                    countingRows = false;
+                    number = "";
+                    gap++;
+                }
+            }
+            //get subscript
+            for (int r = 1; r < rowSize + 1; r++)
+            {
+                for (int c = 1; c < columnSize + 1; c++)
+                {
+                    Clear();
+                    Console.WriteLine("Type in value");
+                    Console.WriteLine($"{r},{c}: ");
+                    string value = Console.ReadLine();
+                    string subscriptTogether = r.ToString() + c.ToString();
+                    subscript.Add(Convert.ToInt32(subscriptTogether), Convert.ToInt32(value));
                 }
             }
         }
