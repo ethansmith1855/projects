@@ -10,16 +10,15 @@ namespace Matrix_Calculator
     {
 
         public static List<Variable> variables = new List<Variable>();
-        
-        public static char currentLetter = 'A';
+
+        //FIX- needs better spacing with bigger numbers
 
         static void Main(string[] args)
         {
-            GetMainInput();
-            ShowAllVariables();
+            MainControl();
         }
 
-        static void GetMainInput()
+        static void GetMainInput()  //NOT USING
         {
             bool keepGoing = true;
             GetVariable();
@@ -32,7 +31,7 @@ namespace Matrix_Calculator
                 switch (input)
                 {
                     case "y":
-                        currentLetter++;
+                        //currentLetter++;
                         GetVariable();
                         break;
                     case "n":
@@ -47,13 +46,118 @@ namespace Matrix_Calculator
             }
         }
 
+        static void MainControl()
+        {
+            bool switchStatement = false;
+            bool keepGoing = true;
+            while (keepGoing)
+            {
+                switchStatement = false;
+                Clear();
+                Console.WriteLine("Type help for help");
+                string input = Console.ReadLine();
+                switch (input)
+                {
+                    case "1":
+                        GetVariable();
+                        switchStatement = true;
+                        break;
+                    case "2":
+                        ShowAllVariables();
+                        switchStatement = true;
+                        break;
+                    case "help":
+                        HelpPage();
+                        switchStatement = true;
+                        break;
+                    default:
+                        break;
+                }
+                if (switchStatement == false)
+                {
+                    CheckMainInput(input);
+                }
+            }
+        }
+
+        static void CheckMainInput(string input)
+        {
+            foreach (var letter in input)
+            {
+                bool letterIsVar = false;
+                foreach (var variable in variables)
+                {
+                    if (letterIsVar == true)
+                    {
+                        if (input.Contains('>'))
+                        {
+                            TransferVariable(input);
+                            break;
+                        }
+                        //switch (letter)
+                        //{
+                        //    case '>':
+                        //        TransferVariable(input);
+                        //        break;
+                        //    default:
+                        //        Clear();
+                        //        Console.WriteLine($"{input} does not exist");
+                        //        Console.ReadKey();
+                        //        break;
+                        //}
+                    }
+                    foreach (var varname in variable.VarName)
+                    {
+                        if (letter == varname)
+                        {
+                            letterIsVar = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        static void TransferVariable(string input)
+        {
+            string orginVar = "";
+            string toVar = "";
+            bool firstVar = true;
+            foreach (var letter in input)
+            {
+                if (Char.IsLetter(letter))
+                {
+                    if (firstVar == true)
+                    {
+                        orginVar = letter.ToString();
+                        firstVar = false;
+                    }
+                    else
+                    {
+                        toVar = letter.ToString();
+                    }
+                }
+            }
+            var toVarLetter = "";
+            toVarLetter = variables.Find(x => x.VarName == toVar).VarName;
+            var orginSubscript = variables.Find(x => x.VarName == orginVar).Subscript;
+            variables.Remove(variables.Where(x => x.VarName == toVar).FirstOrDefault());
+            variables.Add(new Variable(toVarLetter, orginSubscript));
+        }
+
+        static void HelpPage()
+        {
+            Clear();
+            Console.WriteLine("1) Add variable");
+            Console.WriteLine("2) Show variables");
+            Console.ReadKey();
+        }
+
         static void GetVariable()
         {
             Clear();
             //Dictionary cant be a public var in this case
             Dictionary<int, int> subscript = new Dictionary<int, int>();   //mn , value
             subscript.Clear();
-            int rowCount = 0;
             string input = "";
             int rowSize = 0;
             int columnSize = 0;
@@ -116,14 +220,44 @@ namespace Matrix_Calculator
                     subscript.Add(Convert.ToInt32(subscriptTogether), Convert.ToInt32(value));
                 }
             }
-            variables.Add(new Variable(currentLetter.ToString(), subscript));
+
+            //Get variable name 
+            Clear();
+            Console.WriteLine("Variable name: ");
+            var varName = Console.ReadLine();
+            varName = varName.ToUpper();
+            //If var is already in the variable list, it replaces it
+            variables.Remove(variables.Where(x => x.VarName == varName).FirstOrDefault());
+
+            variables.Add(new Variable(varName, subscript));
         }
 
         static void ShowAllVariables()
         {
             Clear();
+            //NEED TO ORDER BY ALPHEBET HERE
+
             foreach (var variable in variables)
             {
+                int biggestNumber = 0;
+                string spaces = "";
+                foreach (var sub in variable.Subscript.Values) //spaces numbers better
+                {
+                    string subS = sub.ToString();
+                    int valueSpots = 0;
+                    foreach (var item in subS)
+                    {
+                        valueSpots++;
+                    }
+                    if (valueSpots > biggestNumber)
+                    {
+                        biggestNumber = valueSpots;
+                    }
+                }
+                for (int i = 0; i < biggestNumber; i++)
+                {
+                    spaces += " ";
+                }
 
                 Console.WriteLine();
                 Console.WriteLine($"{variable.VarName}: ");
@@ -135,11 +269,11 @@ namespace Matrix_Calculator
                     if (subS == "1")
                     {
                         Console.WriteLine();
-                        Console.Write(sub.Value + " ");
+                        Console.Write(sub.Value + spaces);
                     }
                     else
                     {
-                        Console.Write(sub.Value + " ");
+                        Console.Write(sub.Value + spaces);
                     }
                 }
                 Console.WriteLine();
