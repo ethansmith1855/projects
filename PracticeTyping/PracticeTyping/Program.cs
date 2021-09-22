@@ -19,6 +19,7 @@ namespace PracticeTyping
         public static Dictionary<int, string> Sentences = new Dictionary<int, string>();
 
         public static int letterCount = 0;
+        public static int wordCount = 0;
         public static int sentencesCount = 0;
 
         static void Main(string[] args)
@@ -67,7 +68,7 @@ namespace PracticeTyping
             }
             Console.Clear();
             Console.SetCursorPosition(0, 0);
-            Console.WriteLine($"You mad {errors} errors out of {letterCount} letters.");
+            Console.WriteLine($"You mad {errors} errors out of {letterCount} letters, and {wordCount} words.");
 
             Console.ReadKey();
         }
@@ -77,7 +78,6 @@ namespace PracticeTyping
             Random rnd = new Random();
 
             int sentenceLength = rnd.Next(7, 14);
-            int count = 0;
             List<string> shuffle = new List<string>();
             ShuffleAllLists();
             string sentence = "";
@@ -92,6 +92,7 @@ namespace PracticeTyping
             sentence += " ";
             sentence += Nouns.First();
             sentence += ".";
+            wordCount += 5;
             //foreach (var word in Words)
             //{
             //    if (sentenceLength >= count)

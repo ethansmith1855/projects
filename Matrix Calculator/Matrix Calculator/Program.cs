@@ -11,6 +11,8 @@ namespace Matrix_Calculator
 
         public static List<Variable> variables = new List<Variable>();
 
+        public static string MainInput = "";
+
         //FIX- needs better spacing with bigger numbers
 
         static void Main(string[] args)
@@ -24,11 +26,12 @@ namespace Matrix_Calculator
             GetVariable();
             while (keepGoing)
             {
+                MainInput = "";
                 Clear();
                 Console.WriteLine("y) get another variable");
                 Console.WriteLine("n) stop getting variables");
-                string input = Console.ReadLine();
-                switch (input)
+                MainInput = Console.ReadLine();
+                switch (MainInput)
                 {
                     case "y":
                         //currentLetter++;
@@ -82,11 +85,24 @@ namespace Matrix_Calculator
 
         static void CheckMainInput(string input)
         {
+            int varCount = 0;
             foreach (var letter in input)
             {
                 bool letterIsVar = false;
                 foreach (var variable in variables)
                 {
+                    if (input.Contains('*') && variables.Count > 1 && input.Contains(variable.VarName))
+                    {
+                        var matchingVars = variable.VarName.ToString().Where(x => MainInput.Contains(x));
+                        if (letter.ToString() == variable.VarName)
+                        {
+                            varCount++;
+                        }
+                        if (varCount == 2)
+                        {
+                            Console.WriteLine();
+                        }
+                    }
                     if (letterIsVar == true)
                     {
                         if (input.Contains('>'))
@@ -94,17 +110,6 @@ namespace Matrix_Calculator
                             TransferVariable(input);
                             break;
                         }
-                        //switch (letter)
-                        //{
-                        //    case '>':
-                        //        TransferVariable(input);
-                        //        break;
-                        //    default:
-                        //        Clear();
-                        //        Console.WriteLine($"{input} does not exist");
-                        //        Console.ReadKey();
-                        //        break;
-                        //}
                     }
                     foreach (var varname in variable.VarName)
                     {
