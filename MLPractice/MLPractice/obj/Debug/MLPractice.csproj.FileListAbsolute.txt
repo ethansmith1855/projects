@@ -1,0 +1,11 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\bin\Debug\MLModel.zip
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\bin\Debug\MLPractice.exe.config
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\bin\Debug\MLPractice.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\bin\Debug\MLPractice.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\bin\Debug\MLPracticeML.Model.dll
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\bin\Debug\MLPracticeML.Model.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\obj\Debug\MLPractice.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\obj\Debug\MLPractice.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\obj\Debug\MLPractice.csproj.CopyComplete
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\obj\Debug\MLPractice.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPractice\obj\Debug\MLPractice.pdb

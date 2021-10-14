@@ -1,0 +1,10 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\bin\Debug\netstandard2.0\MLModel.zip
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\bin\Debug\netstandard2.0\MLPracticeML.Model.deps.json
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\bin\Debug\netstandard2.0\MLPracticeML.Model.dll
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\bin\Debug\netstandard2.0\MLPracticeML.Model.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\obj\Debug\netstandard2.0\MLPracticeML.Model.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\obj\Debug\netstandard2.0\MLPracticeML.Model.AssemblyInfoInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\obj\Debug\netstandard2.0\MLPracticeML.Model.AssemblyInfo.cs
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\obj\Debug\netstandard2.0\MLPracticeML.Model.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\obj\Debug\netstandard2.0\MLPracticeML.Model.dll
+C:\Users\smith\OneDrive\Documents\GitHub\projects\MLPractice\MLPracticeML.Model\obj\Debug\netstandard2.0\MLPracticeML.Model.pdb

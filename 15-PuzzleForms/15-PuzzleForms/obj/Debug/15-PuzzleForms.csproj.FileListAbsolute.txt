@@ -1,0 +1,10 @@
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\bin\Debug\15-PuzzleForms.exe.config
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\bin\Debug\15-PuzzleForms.exe
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\bin\Debug\15-PuzzleForms.pdb
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\obj\Debug\15-PuzzleForms.csprojAssemblyReference.cache
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\obj\Debug\_15_PuzzleForms.Form1.resources
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\obj\Debug\_15_PuzzleForms.Properties.Resources.resources
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\obj\Debug\15-PuzzleForms.csproj.GenerateResource.cache
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\obj\Debug\15-PuzzleForms.csproj.CoreCompileInputs.cache
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\obj\Debug\15-PuzzleForms.exe
+C:\Users\smith\source\repos\15-PuzzleForms\15-PuzzleForms\obj\Debug\15-PuzzleForms.pdb
