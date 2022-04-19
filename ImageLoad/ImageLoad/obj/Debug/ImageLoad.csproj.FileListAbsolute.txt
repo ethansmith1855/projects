@@ -1,0 +1,7 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\ImageLoad\ImageLoad\bin\Debug\ImageLoad.exe.config
+C:\Users\smith\OneDrive\Documents\GitHub\projects\ImageLoad\ImageLoad\bin\Debug\ImageLoad.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\ImageLoad\ImageLoad\bin\Debug\ImageLoad.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\ImageLoad\ImageLoad\obj\Debug\ImageLoad.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\ImageLoad\ImageLoad\obj\Debug\ImageLoad.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\ImageLoad\ImageLoad\obj\Debug\ImageLoad.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\ImageLoad\ImageLoad\obj\Debug\ImageLoad.pdb

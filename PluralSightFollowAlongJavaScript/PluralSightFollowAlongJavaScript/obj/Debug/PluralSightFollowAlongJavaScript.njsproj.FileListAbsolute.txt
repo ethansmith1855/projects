@@ -1,0 +1,3 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PluralSightFollowAlongJavaScript\PluralSightFollowAlongJavaScript\obj\Debug\PluralSightFollowAlongJavaScript.njsprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PluralSightFollowAlongJavaScript\PluralSightFollowAlongJavaScript\obj\Debug\PluralSightFollowAlongJavaScript.njsproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\PluralSightFollowAlongJavaScript\PluralSightFollowAlongJavaScript\bin\Microsoft.NodejsTools.WebRole.dll

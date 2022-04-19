@@ -1,0 +1,7 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\WordFinder\WordFinder\bin\Debug\WordFinder.exe.config
+C:\Users\smith\OneDrive\Documents\GitHub\projects\WordFinder\WordFinder\bin\Debug\WordFinder.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\WordFinder\WordFinder\bin\Debug\WordFinder.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\WordFinder\WordFinder\obj\Debug\WordFinder.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\WordFinder\WordFinder\obj\Debug\WordFinder.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\WordFinder\WordFinder\obj\Debug\WordFinder.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\WordFinder\WordFinder\obj\Debug\WordFinder.pdb

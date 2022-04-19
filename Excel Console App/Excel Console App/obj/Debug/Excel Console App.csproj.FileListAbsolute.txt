@@ -1,0 +1,7 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Excel Console App\Excel Console App\bin\Debug\Excel Console App.exe.config
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Excel Console App\Excel Console App\bin\Debug\Excel Console App.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Excel Console App\Excel Console App\bin\Debug\Excel Console App.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Excel Console App\Excel Console App\obj\Debug\Excel Console App.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Excel Console App\Excel Console App\obj\Debug\Excel Console App.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Excel Console App\Excel Console App\obj\Debug\Excel Console App.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\Excel Console App\Excel Console App\obj\Debug\Excel Console App.pdb

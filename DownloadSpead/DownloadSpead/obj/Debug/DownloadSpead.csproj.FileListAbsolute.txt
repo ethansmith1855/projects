@@ -1,0 +1,7 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\DownloadSpead\DownloadSpead\bin\Debug\DownloadSpead.exe.config
+C:\Users\smith\OneDrive\Documents\GitHub\projects\DownloadSpead\DownloadSpead\bin\Debug\DownloadSpead.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\DownloadSpead\DownloadSpead\bin\Debug\DownloadSpead.pdb
+C:\Users\smith\OneDrive\Documents\GitHub\projects\DownloadSpead\DownloadSpead\obj\Debug\DownloadSpead.csprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\DownloadSpead\DownloadSpead\obj\Debug\DownloadSpead.csproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\DownloadSpead\DownloadSpead\obj\Debug\DownloadSpead.exe
+C:\Users\smith\OneDrive\Documents\GitHub\projects\DownloadSpead\DownloadSpead\obj\Debug\DownloadSpead.pdb

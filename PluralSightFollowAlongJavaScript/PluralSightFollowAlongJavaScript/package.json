@@ -1,0 +1,9 @@
+{
+  "name": "plural-sight-follow-along-java-script",
+  "version": "0.0.0",
+  "description": "PluralSightFollowAlongJavaScript",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}

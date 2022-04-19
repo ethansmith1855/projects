@@ -1,0 +1,3 @@
+C:\Users\smith\OneDrive\Documents\GitHub\projects\HtmlAndJavaScriptPractice\HtmlAndJavaScriptPractice\obj\Debug\HtmlAndJavaScriptPractice.njsprojAssemblyReference.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\HtmlAndJavaScriptPractice\HtmlAndJavaScriptPractice\obj\Debug\HtmlAndJavaScriptPractice.njsproj.CoreCompileInputs.cache
+C:\Users\smith\OneDrive\Documents\GitHub\projects\HtmlAndJavaScriptPractice\HtmlAndJavaScriptPractice\bin\Microsoft.NodejsTools.WebRole.dll
